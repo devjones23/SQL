@@ -1,0 +1,46 @@
+CREATE TABLE persons (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER);
+    
+INSERT INTO persons (name, age) VALUES ("Jason Alexandre", 32);
+INSERT INTO persons (name, age) VALUES ("Tangia Everett", 21);
+INSERT INTO persons (name, age) VALUES ("Joshua Jones", 31);
+INSERT INTO persons (name, age) VALUES ("Ariana Cannonier", 25);
+INSERT INTO persons (name, age) VALUES ("Matt James", 8);
+INSERT INTO persons (name, age) VALUES ("Andrew Jones", 33);
+
+CREATE table hobbies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    name TEXT);
+    
+INSERT INTO hobbies (person_id, name) VALUES (1, "Drawing");
+INSERT INTO hobbies (person_id, name) VALUES (1, "Coding");
+INSERT INTO hobbies (person_id, name) VALUES (2, "Dancing");
+INSERT INTO hobbies (person_id, name) VALUES (2, "Singing");
+INSERT INTO hobbies (person_id, name) VALUES (3, "Skating");
+INSERT INTO hobbies (person_id, name) VALUES (3, "Video Games");
+INSERT INTO hobbies (person_id, name) VALUES (3, "Hiking");
+INSERT INTO hobbies (person_id, name) VALUES (4, "Collecting");
+INSERT INTO hobbies (person_id, name) VALUES (4, "Research");
+INSERT INTO hobbies (person_id, name) VALUES (4, "Reading");
+INSERT INTO hobbies (person_id, name) VALUES (5, "Writing");
+
+SELECT p.name, h.name
+FROM persons p
+JOIN hobbies h
+On p.id=h.person_id;
+
+SELECT p.name,h.name 
+FROM persons p
+JOIN hobbies h
+On p.id=h.person_id
+WHERE p.name='Jason Alexandre';
+
+
+I created a database of my friends and some of their hobbies, each row in hobbies is related to a row in persons via person_id column.
+
+I used a query that selected 2 tables with a join so that I could see each person's name next to their hobby.
+
+I added an additional query that shows only the name and hobbies of 'Jason Alexandre' using JOIN combined with WHERE
