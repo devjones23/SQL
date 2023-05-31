@@ -130,4 +130,4 @@ INSERT INTO pokemon(Number,Name,Type_1,Type_2,Total,HP,Attack,Defense,Sp_Atk,Sp_
 INSERT INTO pokemon(Number,Name,Type_1,Type_2,Total,HP,Attack,Defense,Sp_Atk,Sp_Def,Speed,Generation,Legendary) VALUES (105,'Marowak','Ground',NULL,425,60,80,110,50,80,45,1,'False');
 INSERT INTO pokemon(Number,Name,Type_1,Type_2,Total,HP,Attack,Defense,Sp_Atk,Sp_Def,Speed,Generation,Legendary) VALUES (106,'Hitmonlee','Fighting',NULL,455,50,120,53,35,110,87,1,'False');
 INSERT INTO pokemon(Number,Name,Type_1,Type_2,Total,HP,Attack,Defense,Sp_Atk,Sp_Def,Speed,Generation,Legendary) VALUES (107,'Hitmonchan','Fighting',NULL,455,50,105,79,35,110,76,1,'False');
-INSERT INTO pokemon(Number,Name,Type_1,Type_2,Total,HP,Attac
+INSERT INTO pokemon(Number,Name,Type_1,Type_2,Total,HP,Attack
