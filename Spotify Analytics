@@ -46,4 +46,32 @@ GROUP BY artist_name, track_name;
 SELECT track_name, artist_name, popularity
 FROM BIT_DB.spotifydata
 ORDER BY popularity desc
-LIMIT 10
+LIMIT 10;
+
+
+
+#The below shows the average tempo of the song
+
+SELECT artist_name, AVG(tempo) as avg_tempo
+FROM BIT_DB.Spotifydata
+GROUP BY artist_name
+ORDER BY avg_tempo DESC;
+
+
+#Below displays the longest and the shortest tracks
+
+-- Longest
+SELECT artist_name, track_name, duration_ms
+FROM BIT_DB.Spotifydata
+ORDER BY duration_ms DESC
+LIMIT 1;
+
+-- Shortest
+SELECT artist_name, track_name, duration_ms
+FROM BIT_DB.Spotifydata
+ORDER BY duration_ms ASC
+LIMIT 1;
+
+
+#These querries help explore various aspects of the data, such as popularity trends, the distribution of musical attributes like key and tempo, and the relationship between variables.
+
