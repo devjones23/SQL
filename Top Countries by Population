@@ -84,6 +84,7 @@ INSERT INTO countries(name,population,percent_one_year_change,population_change,
 INSERT INTO countries(name,population,percent_one_year_change,population_change,density_per_sq_km,area_sq_km,net_migrants,fertility_rate,median_age,percent_of_world_pop) VALUES ('Cambodia',16718965,1.41,232423,95,176520,-30000,2.50,26.00,0.21);
 
 
+- Basic querries 
 
 SELECT * FROM countries;
 
@@ -92,3 +93,20 @@ SELECT AVG(population) FROM countries;
 SELECT AVG(median_age) FROM countries;
 
 SELECT MAX(density_per_sq_km) FROM countries;
+
+
+
+- Here I wanted to explore the impact on migration and population size
+
+SELECT name, population_change, net_migrants 
+FROM countries;
+
+
+- Next I wanted to look specifically at countries where net migration had a significant impact on population size. I looked at where 'net_migrants' is a large portion of 'population_change'
+ 
+SELECT name, population_change, net_migrants 
+FROM countries
+WHERE ABS(net_migrants) > 0.5 * ABS(population_change);
+
+- This query selects only countries where net migration accounted for more than 50% of population change. I used the 'ABS()' function to ensure to compare the magnitude of change rather than the raw values, which could be negative or positive. 
+
